@@ -38,13 +38,32 @@ class Persona {
   }
 
   agregarBandida(nombreBandidas) {
-        this.bandidas.push(nombreBandidas)
+    this.bandidas.push(nombreBandidas);
+  }
+
+  conseguiNovia(nombreBandido) {
+    this.bandidas = [];
   }
 }
 
 const guardar = document.getElementById("boton1");
 const bandidas = document.getElementById("boton2");
 const eliminar = document.getElementById("boton3");
+const novia = document.getElementById("boton4");
+
+novia.addEventListener("click", () => {
+  let persona;
+  const nombreBandido = document.getElementById("nombres").value;
+
+  for (let i = 0; i < datos.length; i++) {
+    if (datos[i].name == nombreBandido) {
+      persona = datos[i];
+      console.log(persona);
+      persona.conseguiNovia(nombreBandido)
+      console.log(persona)
+    }
+  }
+});
 
 bandidas.addEventListener("click", () => {
   //   let bandiName = document.getElementById("name2").value;
@@ -58,16 +77,16 @@ bandidas.addEventListener("click", () => {
   let nombreBandidas = document.getElementById("name2").value;
   const name = document.getElementById("nombres").value;
 
-  for(let i=0;i<datos.length;i++){
-    if(datos[i].name==name){
-        persona=datos[i]
-        console.log(persona)
-        persona.agregarBandida(nombreBandidas);
-        // cari.push(nombreBandidas);
-        console.log(persona)
+  for (let i = 0; i < datos.length; i++) {
+    if (datos[i].name == name) {
+      persona = datos[i];
+      console.log(persona);
+      persona.agregarBandida(nombreBandidas);
+      // cari.push(nombreBandidas);
+      console.log(persona);
     }
     const listaBandidas = document.getElementById("listaBandidas");
-    listaBandidas.innerHTML = `Tus bandidas son: ${cari}`;
+    listaBandidas.innerHTML = `Tus bandidas son: ${nombreBandidas}`;
   }
 });
 
