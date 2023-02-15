@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <label for="">Nombres</label>
-    <input id="nombres" type="text"><br>
-
-    <label  for="">Apellidos</label>
-    <input id="apellidos" type="text"><br>
-
-    <label for="">Edad</label>
-    <input id="edad" type="text"><br>
-    
-    <button id="boton1">Guardar</button>
-
-    <form action="#">
-        <label for="">Las bandidas</label>
-        <input id="name2" type="text"><br>
-        <button id="boton2">Guardar bandidas</button>
-        <button id="boton3">Eliminar Bandida</button>
-    </form>
-
-    <div id="listaBandidas">
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="datos">
+        <label for="">Nombres</label>
+        <input id="nombres" type="text" /><br />
+        <br />
+        <label for="">Apellidos</label>
+        <input id="apellidos" type="text" /><br />
+        <br />
+        <label for="">Edad</label>
+        <input id="edad" type="text" /><br />
+        <br />
+        <button id="boton1">Guardar</button>
+        <form action="#">
+          <label for="">Las bandidas</label>
+          <br />
+          <input id="name2" type="text" /><br />
+          <br />
+          <button id="boton2">Guardar bandidas</button>
+          <button id="boton3">Eliminar Bandida</button>
+        </form>
+      </div>
     </div>
-
+    <div class="container2">
+        <div id="listaBandidas"></div>
+    </div>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>

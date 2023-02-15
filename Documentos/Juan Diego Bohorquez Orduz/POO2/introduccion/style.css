@@ -1,0 +1,21 @@
+body{
+    background-color: aqua;
+}
+
+.container{
+    border: solid 1px;
+    display: flex;
+    justify-content: center;
+}
+
+.container2{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    border: solid 1px;
+}
+
+.datos{
+    justify-content: center;
+    text-align: center;
+}
