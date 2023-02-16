@@ -1,5 +1,5 @@
 const datos = [];
-let cari = [];
+let cari=[]
 
 class Persona {
   name;
@@ -30,10 +30,41 @@ class Persona {
   }
 }
 
+class Empleado extends Persona{
+  valor_hora;
+  horas_trabajadas;
+  horas_forajidas;
+  salario;
+
+
+  constructor(valor_hora,horas_forajidas,horas_trabajadas,salario){
+    this.valor_hora=valor_hora;
+    this.horas_forajidas=horas_forajidas;
+    this.horas_trabajadas=horas_trabajadas;
+    this.salario=salario;
+  }
+
+
+  calcularSalario(){
+    this.salario = this.horas_trabajadas*this.valor_hora
+  }
+
+  horas_con_forajidas(){}
+}
+
+
+
 const guardar = document.getElementById("boton1");
 const bandidas = document.getElementById("boton2");
 const eliminar = document.getElementById("boton3");
 const novia = document.getElementById("boton4");
+const salarioMes=document.getElementById('salario');
+
+salarioMes.addEventListener('click',()=>{
+  const horasSemana=document.getElementById('horas1').value
+
+  console.log(horasSemana)
+})
 
 novia.addEventListener("click", () => {
   let persona;
@@ -57,15 +88,18 @@ bandidas.addEventListener("click", () => {
   for (let i = 0; i < datos.length; i++) {
     if (datos[i].name == name) {
       persona = datos[i];
-      console.log(persona);
+      // console.log(persona);
       persona.agregarBandida(nombreBandidas);
-      // cari.push(nombreBandidas);
-      console.log(persona);
+      // console.log(persona);
     }
-    const listaBandidas = document.getElementById("listaBandidas");
-    listaBandidas.innerHTML = `Tus bandidas son: ${nombreBandidas}`;
+    // const listaBandidas = document.getElementById("listaBandidas");
+    // listaBandidas.innerHTML = `Tus bandidas son: ${nombreBandidas}`;
+    // localStorage.setItem("Los Bandidos", JSON.stringify(datos));
+    console.log(persona);
+
   }
 });
+
 
 guardar.addEventListener("click", () => {
   let name = document.getElementById("nombres").value;
@@ -74,13 +108,12 @@ guardar.addEventListener("click", () => {
 
   const nuevaPersona = new Persona(name, apellidos, edad, cari);
   datos.push(nuevaPersona);
+  localStorage.setItem("Los Bandidos", JSON.stringify(datos));
 
-  console.log(nuevaPersona);
-  console.log(datos);
-  cari = [];
   name = document.getElementById("nombres").value = "";
   apellidos = document.getElementById("apellidos").value = "";
   edad = document.getElementById("edad").value = "";
+  cari=[]
 });
 
 eliminar.addEventListener("click", () => {
@@ -97,3 +130,21 @@ eliminar.addEventListener("click", () => {
     }
   }
 });
+
+const mostrar=document.getElementById('boton5')
+const tabla=document.getElementById('tabla')
+
+mostrar.addEventListener('click',()=>{
+  lista = JSON.parse(localStorage.getItem("Los Bandidos"));
+  for(let i=0; i<lista.length;i++){
+    tabla.innerHTML+=`
+              <tr>
+                <td>${lista[i].name}</td>
+                <td>${lista[i].last_name}</td>
+                <td>${lista[i].age}</td>
+                <td>${lista[i].bandida}</td>
+              </tr>
+
+    `
+  }
+})

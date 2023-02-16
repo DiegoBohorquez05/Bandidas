@@ -3,7 +3,6 @@ body{
 }
 
 .container{
-    border: solid 1px;
     display: flex;
     justify-content: center;
 }
@@ -18,4 +17,24 @@ body{
 .datos{
     justify-content: center;
     text-align: center;
+}
+
+td{
+    border: solid 1px;
+    background-color: white;
+}
+
+.container3{
+    display: flex;
+    margin-top: 20px;
+}
+
+.datos{
+    border: solid 1px;
+    width: 50%;
+}
+
+.mostrar{
+    border: solid 1px;
+    width: 50%;
 }
