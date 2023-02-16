@@ -1,19 +1,3 @@
-// class Producto{
-//     name = ''
-//     price = 0
-//     description = ''
-
-//     constructor(name,price,description = ''){
-//         this.name = name
-//         this.price = price
-//         this.description = description
-//     }
-// }
-
-// const cualquierNombre = new Producto('PC',50000,'xD')
-
-// console.log(cualquierNombre)
-
 const datos = [];
 let cari = [];
 
@@ -66,13 +50,6 @@ novia.addEventListener("click", () => {
 });
 
 bandidas.addEventListener("click", () => {
-  //   let bandiName = document.getElementById("name2").value;
-  //   cari.push(bandiName);
-  //   console.log(cari);
-  //   bandiName = document.getElementById("name2").value = "";
-
-  //   const listaBandidas = document.getElementById("listaBandidas");
-  //   listaBandidas.innerHTML = `Tus bandidas son: ${cari}`;
   let persona;
   let nombreBandidas = document.getElementById("name2").value;
   const name = document.getElementById("nombres").value;
@@ -119,8 +96,4 @@ eliminar.addEventListener("click", () => {
       console.log(persona);
     }
   }
-
-  //   const bandido = datos.find((persona) => {
-  //     return persona.nombre === name;
-  //   });
 });
