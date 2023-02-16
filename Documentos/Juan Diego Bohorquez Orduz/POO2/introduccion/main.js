@@ -80,14 +80,16 @@ novia.addEventListener("click", () => {
   }
 });
 
+//REVISAR
 bandidas.addEventListener("click", () => {
   let persona;
   let nombreBandidas = document.getElementById("name2").value;
   const name = document.getElementById("nombres").value;
+  lista = JSON.parse(localStorage.getItem("Los Bandidos"));
 
-  for (let i = 0; i < datos.length; i++) {
-    if (datos[i].name == name) {
-      persona = datos[i];
+  for (let i = 0; i < lista.length; i++) {
+    if (lista[i].name == name) {
+      persona = lista[i];
       // console.log(persona);
       persona.agregarBandida(nombreBandidas);
       // console.log(persona);
@@ -108,12 +110,11 @@ guardar.addEventListener("click", () => {
 
   const nuevaPersona = new Persona(name, apellidos, edad, cari);
   datos.push(nuevaPersona);
-  localStorage.setItem("Los Bandidos", JSON.stringify(datos));
+  localStorage.setItem("Los Bandidos", JSON.stringify(nuevaPersona));
 
   name = document.getElementById("nombres").value = "";
   apellidos = document.getElementById("apellidos").value = "";
   edad = document.getElementById("edad").value = "";
-  cari=[]
 });
 
 eliminar.addEventListener("click", () => {
